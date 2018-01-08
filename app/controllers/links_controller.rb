@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show] #Note before filter. Migh have issues with this.
+  before_action :authenticate_user!, except: [:index, :show] #Note before filter. Migh have issues with this.
   
 
   # GET /links
