@@ -33,16 +33,7 @@
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
-
-		<% if user_signed_in? %>
-		<ul>	
-			<li></li>
-			<li></li>
-			<li></li>
-
-
-		<% end %> 
-
+		
 			<div id="content" class="col-md-9 center-block">
 				<%= yield %>
 			</div>
