@@ -7,7 +7,6 @@ Rails.application.routes.draw do
       put "like", to:    "links#upvote"
       put "dislike", to: "links#downvote"
     end
-
     resources :comments
   end
   
