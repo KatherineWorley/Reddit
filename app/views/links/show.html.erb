@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by <%= @link.user.email %></small></h1>
+  <h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>Submitted by <%= @link.user.name %></small></h1>
 </div>
 
 <div class="btn-group">
@@ -19,7 +19,7 @@
   <% end %>
 </div>
 
-<% if @link.user == current_user %>
+<% if @link.user == current_user -%>
   <div class="btn-group">
     <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
     <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
@@ -33,7 +33,6 @@
 <div id="comments">
   <%= render :partial => @link.comments %>
 </div>
-
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
